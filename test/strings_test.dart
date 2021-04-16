@@ -1,4 +1,4 @@
-import 'package:speed_up/strings.dart';
+import 'package:speed_up/src/string_extensions.dart';
 import 'package:test/test.dart';
 
 void main() {

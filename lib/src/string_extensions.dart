@@ -1,3 +1,8 @@
+/// Check String is null or empty
+///
+/// ```dart
+/// isStringNullOrEmpty('Some String');
+/// ```
 bool isStringNullOrEmpty(String? str) => str == null || str.isEmpty;
 
 String? takeFirstNonEmptyString(List<String?> strings) {

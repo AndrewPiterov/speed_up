@@ -1,3 +1,8 @@
-## [0.0.1] - TODO: Add release date.
+## [0.1.1] - Refactoring.
 
-* TODO: Describe initial release.
+* Add documentations
+
+## [0.0.1] - Add release date.
+
+* String extensions
+* Number extensions

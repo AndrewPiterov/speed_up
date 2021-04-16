@@ -1,14 +1,25 @@
-# speed_up
+# SpeedUp
 
-A new Flutter package project.
+Package to speed up your productivity
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+### String extensions
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+#### Check String is null or empty
+
+```dart
+isStringNullOrEmpty('Some String');
+```
+
+## Contributing
+
+We accept the following contributions:
+
+* Improving documentation
+* Reporting issues
+* Fixing bugs
+
+## Maintainers
+
+* [Andrew Piterov](mailto:piterov1990@gmail.com?subject=[GitHub]%20Source%20Dart%20fluent_result)

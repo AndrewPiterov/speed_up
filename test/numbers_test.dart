@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:speed_up/numbers.dart';
+import 'package:speed_up/src/number_extensions.dart';
 
 void main() {
   test('Get date from int Unix timestamp as UTC', () {

@@ -1,4 +1,4 @@
 library speed_up;
 
-export './strings.dart';
-export './numbers.dart';
+export 'src/string_extensions.dart';
+export 'src/number_extensions.dart';
