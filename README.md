@@ -10,6 +10,33 @@ Package to speed up your productivity
 
 ```dart
 isStringNullOrEmpty('Some String');
+isStringNullOrEmpty('');
+isStringNullOrEmpty(null);
+```
+
+will print
+
+```dart
+false
+true
+true
+```
+
+#### Get enum title
+
+```dart
+enum AccountType {
+  general,
+  owner,
+}
+
+debugPrint('Account type: ' + getEnumTitle(UserType.general));
+```
+
+will print
+
+```dart
+Account type: general
 ```
 
 ## Contributing

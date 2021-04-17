@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:speed_up/speed_up.dart';
 
+enum UserType {
+  general,
+  owner,
+}
+
 void main() {
   runApp(MyApp());
 }
@@ -43,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     debugPrint(isStringNullOrEmpty('').toString());
+    debugPrint(getEnumTitle(UserType.general));
 
     return Scaffold(
       appBar: AppBar(
