@@ -39,6 +39,25 @@ will print
 Account type: general
 ```
 
+#### Get image file size
+
+```dart
+
+const fileSize = 1024 * 1024;
+
+// Get file size in closest size suffix
+final sizeInMb = FileSizeInfo.getSize(bytes);
+log(sizeInKb.getTitle())); // prints '1.oo MB'
+log(sizeInKb.getTitle(decimals: 0))); // prints '1 MB'
+
+// Convert to desired suffix
+final sizeInKb = sizeInMb.asSuffix(FileSizeSuffix.KB);
+log(sizeInKb.getTitle())); // prints '1024 KB'
+
+log();
+
+```
+
 ## Contributing
 
 We accept the following contributions:

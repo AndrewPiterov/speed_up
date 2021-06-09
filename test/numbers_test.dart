@@ -17,7 +17,7 @@ void main() {
     final date = 1617190965005.toDateFromMsUnixTimestamp(asLocal: true);
 
     final localTz = date.timeZoneOffset;
-    final local = date.add(localTz);
+    // final local = date.add(localTz);
 
     expect(date.year, 2021);
     expect(date.month, 3);

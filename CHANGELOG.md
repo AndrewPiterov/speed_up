@@ -1,5 +1,7 @@
 # Changelogs
 
+## [0.3.0] -  Add FileSizeInfo
+
 ## [0.2.1] - Add getEnumTitle function
 
 ## [0.1.1] - Refactoring
