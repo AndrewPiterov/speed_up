@@ -6,6 +6,13 @@ Package to speed up your productivity
 
 ### String extensions
 
+### Collection extension
+
+```dart
+final sum = [1,2,3,4,5,6].sum();
+print(sum); // Prints 21
+```
+
 #### Check String is null or empty
 
 ```dart

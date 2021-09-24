@@ -1,5 +1,9 @@
 # Changelogs
 
+## [0.4.0] - Add Number collection extension
+
+* `sum` for collection of num
+
 ## [0.3.0] -  Add FileSizeInfo
 
 ## [0.2.1] - Add getEnumTitle function
