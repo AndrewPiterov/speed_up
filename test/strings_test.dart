@@ -1,5 +1,6 @@
 import 'package:speed_up/src/string_extensions.dart';
 import 'package:test/test.dart';
+import 'package:shouldly/shouldly.dart';
 
 void main() {
   test('Empty string should be empty', () {
@@ -30,5 +31,15 @@ void main() {
     final firstItem =
         takeFirstNonEmptyString(['', firstNonEmptyItem, 'two', null]);
     expect(firstItem, firstNonEmptyItem);
+  });
+
+  group('Capitalization', () {
+    test('should capitalize first letter', () {
+      'andrew'.capitalize().should.be('Andrew');
+    });
+
+    test('should not change capitalization of other letters', () {
+      'AnDReW'.capitalize().should.be('AnDReW');
+    });
   });
 }

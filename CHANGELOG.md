@@ -1,3 +1,7 @@
+## 0.4.2
+
+* [Add] String' `capitalize`
+
 ## 0.4.1
 
 * [Add] num' `generate` func
