@@ -35,11 +35,21 @@ void main() {
 
   group('Capitalization', () {
     test('should capitalize first letter', () {
-      'andrew'.capitalize().should.be('Andrew');
+      'andrew'.capitalized.should.be('Andrew');
     });
 
     test('should not change capitalization of other letters', () {
-      'AnDReW'.capitalize().should.be('AnDReW');
+      'AnDReW'.capitalized.should.be('AnDReW');
+    });
+  });
+
+  group('Title Cased', () {
+    test('should capitalize first letters', () {
+      'andrew piterov'.titleCased.should.be('Andrew Piterov');
+    });
+
+    test('should not change capitalization of other letters', () {
+      'AnDReW PiterOV'.titleCased.should.be('AnDReW PiterOV');
     });
   });
 }

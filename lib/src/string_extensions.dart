@@ -31,7 +31,13 @@ bool areStringsEqual(
 }
 
 extension StringExtension on String {
-  String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1)}";
+  String get capitalized {
+    return isNotEmpty ? "${this[0].toUpperCase()}${this.substring(1)}" : this;
   }
+
+  String get titleCased => this
+      .replaceAll(RegExp(' +'), ' ')
+      .split(" ")
+      .map((str) => str.capitalized)
+      .join(" ");
 }
