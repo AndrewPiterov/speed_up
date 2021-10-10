@@ -1,4 +1,7 @@
-# Changelogs
+## 0.4.1
+
+* [Add] num' `generate` func
+* [Add] `groupBy` for collection
 
 ## [0.4.0] - Add Number collection extension
 

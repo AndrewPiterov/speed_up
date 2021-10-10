@@ -21,4 +21,22 @@ extension IntExtensions on int {
 
     return d.toUtc();
   }
+
+  Iterable<T> generate<T>(
+    T Function(int index) map, {
+    bool Function(T item)? where,
+  }) sync* {
+    for (var i = 0; i < this; i++) {
+      final t = map(i);
+      if (where != null) {
+        if (where(t)) {
+          yield t;
+        }
+
+        continue;
+      }
+
+      yield t;
+    }
+  }
 }
