@@ -1,3 +1,4 @@
+import 'package:speed_up/src/range_value.dart';
 import 'package:speed_up/src/string_extensions.dart';
 import 'package:test/test.dart';
 import 'package:shouldly/shouldly.dart';

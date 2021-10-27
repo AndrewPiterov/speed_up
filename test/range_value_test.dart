@@ -1,5 +1,5 @@
 import 'package:given_when_then_unit_test/given_when_then_unit_test.dart';
-import 'package:speed_up/src/range_value.dart';
+import 'package:speed_up/speed_up.dart';
 import 'package:test/test.dart';
 import 'package:shouldly/shouldly.dart';
 

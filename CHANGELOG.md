@@ -1,3 +1,7 @@
+## 0.4.4
+
+* [Add] comments for `RangeValue`
+
 ## 0.4.3
 
 * [Add] `RangeValue`
