@@ -65,6 +65,19 @@ log();
 
 ```
 
+#### RangeValue type
+
+```dart
+final numRange = RangeValue(1, 10);
+print(numRange.isValid); // true
+
+final start = DateTime.now();
+final end = DateTime.now().add(Duration(days: 1));
+final dateTimeRange = RangeValue(end, start);
+
+print(dateTimeRange.isValid); // false
+```
+
 ## Contributing
 
 We accept the following contributions:

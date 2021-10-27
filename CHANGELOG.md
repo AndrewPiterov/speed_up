@@ -1,3 +1,7 @@
+## 0.4.3
+
+* [Add] `RangeValue`
+
 ## 0.4.2
 
 * [Add] String' `capitalize`
