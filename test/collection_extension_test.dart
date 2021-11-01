@@ -1,6 +1,12 @@
+import 'dart:developer';
+
+import 'package:given_when_then_unit_test/res/given.dart';
+import 'package:given_when_then_unit_test/res/test_fixtures.dart';
+import 'package:given_when_then_unit_test/res/then.dart';
+import 'package:given_when_then_unit_test/res/when.dart';
+import 'package:shouldly/shouldly.dart';
 import 'package:speed_up/src/collection_extensions.dart';
 import 'package:test/test.dart';
-import 'package:shouldly/shouldly.dart';
 
 void main() {
   group('Number extensions:', () {
@@ -44,14 +50,126 @@ void main() {
       });
     });
   });
+
+  given('Collection', () {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+    when('take after 7', () {
+      then('should be 8', () {
+        arr.takeAfter(7).should.be(8);
+      });
+    });
+
+    when('take random elemenet', () {
+      late List<bool> randomLoop;
+
+      before(() {
+        final nums = <int>[];
+        final loop = <bool>[];
+
+        for (var i = 0; i < arr.length; i++) {
+          final ele = arr.random;
+          if (nums.isEmpty) {
+            loop.add(true);
+            nums.add(ele!);
+            continue;
+          }
+
+          loop.add(nums.last == ele);
+          nums.add(ele!);
+        }
+
+        log('Random: $nums');
+        randomLoop = loop;
+      });
+
+      then('should be randomize', () {
+        randomLoop.should.contain(false);
+      });
+
+      then('should be unique', () {
+        final uniqueRandom = arr.takeRandom(arr.length - 3);
+        final distinct = uniqueRandom.toSet().toList();
+
+        distinct.should.haveCount(uniqueRandom.length);
+      });
+
+      then('can contain duplicates', () {
+        final random = arr.takeRandom(arr.length - 3, mayHaveDuplicates: true);
+        final distinct = random.toSet().toList();
+
+        distinct.length.should.not.be(distinct);
+      });
+    });
+
+    when('take random elements', () {
+      then('always result collections are different', () {
+        final loops = <List<int>>[];
+
+        for (var i = 0; i < 2; i++) {
+          final items = arr.takeRandom(10);
+          loops.add(items.toList());
+        }
+
+        log('First list: ${loops.first}');
+        log('First list: ${loops.last}');
+
+        loops.first.should.not.be(loops.last);
+      });
+    });
+  });
+
+  given('Empty array', () {
+    const arr = [];
+    then('random should be null', () {
+      // arr.takeRandom().should.beNull();
+      expect(arr.takeRandom(12), []);
+    });
+  });
+
+  given('Coin Orders', () {
+    late List<CoinOrder> orders;
+    before(() {
+      orders = [
+        const CoinOrder(1, 1),
+        const CoinOrder(1, 1),
+      ];
+    });
+
+    when('sum total coins', () {
+      then('total coin amount should be 2', () {
+        final sum = orders.sum((o) => o.amount);
+        sum.should.be(2);
+      });
+    });
+
+    when('add more coins', () {
+      late List<CoinOrder> secondWallet;
+      before(() {
+        secondWallet = orders.toList()..add(const CoinOrder(5, 1));
+      });
+
+      then('total coin amount should be 5', () {
+        final sum = secondWallet.sum((o) => o.amount);
+        sum.should.be(7);
+      });
+    });
+  });
+}
+
+class CoinOrder {
+  const CoinOrder(this.amount, this.coinPrice);
+
+  final double amount;
+  final double coinPrice;
 }
 
 class Person {
-  final String name;
-  final int? age;
-
   const Person(
     this.name, {
     this.age,
   });
+
+  final String name;
+  final int? age;
 }

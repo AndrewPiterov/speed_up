@@ -1,6 +1,24 @@
-# Examples
+// ignore_for_file: avoid_print
 
-```dart
+import 'package:speed_up/speed_up.dart';
+
+class CoinOrder {
+  const CoinOrder(this.amount, this.coinPrice);
+
+  final double amount;
+  final double coinPrice;
+}
+
+class Person {
+  const Person(
+    this.name, {
+    this.age,
+  });
+
+  final String name;
+  final int? age;
+}
+
 void main() {
   // Summary of nums
   final arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -26,4 +44,3 @@ void main() {
   final amountSum = orders.sum((order) => order.amount);
   print('Amount sum: $amountSum');
 }
-```

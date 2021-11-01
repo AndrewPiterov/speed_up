@@ -1,6 +1,12 @@
-# SpeedUp
+# speed_up
 
-Package to speed up your productivity
+[![pub package](https://img.shields.io/pub/v/speed_up.svg?label=speed_up&color=blue)](https://pub.dev/packages/speed_up)
+[![likes](https://badges.bar/speed_up/likes)](https://pub.dev/packages/speed_up/score)
+[![codecov](https://codecov.io/gh/AndrewPiterov/speed_up/branch/main/graph/badge.svg?token=VM9LTJXGQS)](https://codecov.io/gh/AndrewPiterov/speed_up)
+[![style: lint](https://img.shields.io/badge/style-lint-4BC0F5.svg)](https://pub.dev/packages/lint)
+[![Dart](https://github.com/AndrewPiterov/speed_up/actions/workflows/dart.yml/badge.svg)](https://github.com/AndrewPiterov/speed_up/actions/workflows/dart.yml)
+
+Package to speed up your productivity.
 
 ## Usage
 
@@ -8,10 +14,21 @@ Package to speed up your productivity
 
 ### Collection extension
 
+#### Sum
+
 ```dart
 final sum = [1,2,3,4,5,6].sum();
 print(sum); // Prints 21
 ```
+
+```dart
+final sum = [Product(price: 100.99), Product(price: 49.99)].sum((p) => p.price);
+print(sum); // Prints 150.98
+```
+
+#### Next After
+
+#### Random
 
 #### Check String is null or empty
 
@@ -19,14 +36,6 @@ print(sum); // Prints 21
 isStringNullOrEmpty('Some String');
 isStringNullOrEmpty('');
 isStringNullOrEmpty(null);
-```
-
-will print
-
-```dart
-false
-true
-true
 ```
 
 #### Get enum title
@@ -37,13 +46,7 @@ enum AccountType {
   owner,
 }
 
-debugPrint('Account type: ' + getEnumTitle(UserType.general));
-```
-
-will print
-
-```dart
-Account type: general
+debugPrint('Account type: ' + getEnumTitle(UserType.general)); // prints Account type: general
 ```
 
 #### Get image file size
@@ -88,4 +91,4 @@ We accept the following contributions:
 
 ## Maintainers
 
-* [Andrew Piterov](mailto:piterov1990@gmail.com?subject=[GitHub]%20Source%20Dart%20fluent_result)
+* [Andrew Piterov](mailto:piterov1990@gmail.com?subject=[GitHub]%20Source%20Dart%20speed_up)

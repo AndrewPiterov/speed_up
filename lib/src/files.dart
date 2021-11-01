@@ -10,6 +10,7 @@ enum FileExtension {
   webp,
 }
 
+// ignore: avoid_classes_with_only_static_members
 class FilePathExtensions {
   static bool isPng(String filePath) => filePath.toLowerCase().endsWith('.png');
   static bool isWebp(String filePath) =>
@@ -27,6 +28,7 @@ class FilePathExtensions {
               : FileExtension.unknown;
 }
 
+// ignore: constant_identifier_names
 enum FileSizeSuffix { B, KB, MB, GB, TB, PB, EB, ZB, YB }
 
 class FileSizeInfo {
@@ -38,7 +40,7 @@ class FileSizeInfo {
 
   final int totalBytes;
   String getTitle({int decimals = 2}) {
-    return (suffixSize.toStringAsFixed(decimals)) + ' ' + getEnumTitle(suffix);
+    return '${suffixSize.toStringAsFixed(decimals)} ${getEnumTitle(suffix)}';
   }
 
   final double suffixSize;
@@ -57,18 +59,20 @@ class FileSizeInfo {
     return getSize(bytes);
   }
 
-  static FileSizeInfo getSize(bytes) {
+  ///
+  static Future<FileSizeInfo> getSize(int bytes) async {
     final i = (log(bytes) / log(1024)).floor();
 
-    final sizeInSuffix = (bytes / pow(1024, i));
+    final sizeInSuffix = bytes / pow(1024, i);
     final suffix = FileSizeSuffix.values[i];
 
     return FileSizeInfo(bytes, sizeInSuffix, suffix);
   }
 
+  ///
   FileSizeInfo asSuffix(FileSizeSuffix suffix) {
     final i = FileSizeSuffix.values.indexOf(suffix);
-    final size = (totalBytes / pow(1024, i));
+    final size = totalBytes / pow(1024, i);
     return FileSizeInfo(totalBytes, size, suffix);
   }
 }

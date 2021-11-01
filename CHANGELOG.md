@@ -1,3 +1,11 @@
+## 0.5.5
+
+* [Add] `takeRandom` from `Iterable`
+* [Add] `takeRandoms` from `Iterable`
+* [Add] `nextAfter` of `Iterable`
+* [Add] `sum` for complex object `Iterable`
+* [Add] `isBetween` for `num`s
+
 ## 0.4.4
 
 * [Add] comments for `RangeValue`

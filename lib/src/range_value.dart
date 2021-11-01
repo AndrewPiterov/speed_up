@@ -1,12 +1,14 @@
+import 'package:meta/meta.dart';
 import 'package:quiver/core.dart';
 
 /// Object for representing range values.
+@immutable
 class RangeValue<T> {
-  final T start;
-  final T end;
-
   /// Initialize new `RangeValue`
   const RangeValue(this.start, this.end);
+
+  final T start;
+  final T end;
 
   /// Represents valid state
   bool get isValid {
@@ -16,6 +18,19 @@ class RangeValue<T> {
 
     if (start is num) {
       return (start as num) < (end as num);
+    }
+
+    return true;
+  }
+
+  bool inRange(T value) {
+    if (start is DateTime) {
+      return (start as DateTime).isBefore(value as DateTime) &&
+          value.isBefore(end as DateTime);
+    }
+
+    if (start is num) {
+      return (start as num) < (value as num) && value < (end as num);
     }
 
     return true;
