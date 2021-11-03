@@ -5,14 +5,65 @@ import 'package:speed_up/src/string_extensions.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('Empty string should be empty', () {
-    final isEmpty = isStringNullOrEmpty('');
-    expect(isEmpty, true);
+  given('empty string', () {
+    const emptyString = '';
+
+    then('should be isNullOrEmpty', () {
+      emptyString.isNullOrEmpty.should.beTrue();
+    });
+
+    then('should not be isNotNullorEmpty', () {
+      emptyString.isNotNullOrEmpty.should.beFalse();
+    });
+
+    test('Empty string should be empty', () {
+      final isEmpty = isStringNullOrEmpty('');
+      expect(isEmpty, true);
+    });
+
+    then('should has length of 0', () {
+      emptyString.hasLength(0).should.beTrue();
+    });
   });
 
-  test('Null string should be empty', () {
-    final isEmpty = isStringNullOrEmpty(null);
-    expect(isEmpty, true);
+  given('Null string', () {
+    const String? emptyString = null;
+
+    then('should be isNullOrEmpty', () {
+      emptyString.isNullOrEmpty.should.beTrue();
+    });
+
+    then('should not be isNotNullorEmpty', () {
+      emptyString.isNotNullOrEmpty.should.beFalse();
+    });
+
+    test('Null string should be empty', () {
+      final isEmpty = isStringNullOrEmpty(null);
+      expect(isEmpty, true);
+    });
+
+    then('should has length of 0', () {
+      emptyString.hasLength(0).should.beTrue();
+    });
+  });
+
+  given('non empty string', () {
+    const someString = 'some string';
+
+    then('should have length greater than 0', () {
+      someString.hasLengthGreaterThan(0).should.beTrue();
+    });
+
+    then('should have length greater than his (length - 1)', () {
+      someString.hasLengthGreaterThan(someString.length - 1).should.beTrue();
+    });
+
+    then('should have length greater or equal his length', () {
+      someString
+          .hasLengthGreaterThan(someString.length, orEqual: true)
+          .should
+          .beTrue();
+    });
   });
 
   test('Take first non empty string', () {

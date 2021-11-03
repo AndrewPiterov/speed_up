@@ -1,3 +1,7 @@
+## 0.5.6
+
+* [Add] `String`'s extensions: `isNotNullOrEmpty`, `hasLength`, `hasLengthGreaterThan`
+
 ## 0.5.5
 
 * [Add] `takeRandom` from `Iterable`

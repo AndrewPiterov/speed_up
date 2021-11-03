@@ -29,6 +29,7 @@ extension StringExtension on String {
 
 extension NullableStringExtension on String? {
   bool get isNullOrEmpty => isStringNullOrEmpty(this);
+  bool get isNotNullOrEmpty => !isStringNullOrEmpty(this);
 
   bool isEqualTo(
     String? another, {
@@ -58,5 +59,15 @@ extension NullableStringExtension on String? {
     }
 
     return this != another;
+  }
+
+  /// has exact length
+  bool hasLength(int len) {
+    return (this?.length ?? 0) == len;
+  }
+
+  bool hasLengthGreaterThan(int len, {bool orEqual = false}) {
+    final myLen = this?.length ?? 0;
+    return orEqual ? myLen >= len : myLen > len;
   }
 }
