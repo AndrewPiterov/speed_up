@@ -3,6 +3,9 @@
 /// ```dart
 /// isStringNullOrEmpty('Some String');
 /// ```
+@Deprecated(
+  'Use `isNullOrEmpty` getter of `String` instead. Will be removed in 1.0.0',
+)
 bool isStringNullOrEmpty(String? str) => str == null || str.isEmpty;
 
 extension StringIterableExtension on Iterable<String?> {
@@ -69,5 +72,10 @@ extension NullableStringExtension on String? {
   bool hasLengthGreaterThan(int len, {bool orEqual = false}) {
     final myLen = this?.length ?? 0;
     return orEqual ? myLen >= len : myLen > len;
+  }
+
+  bool hasLengthShortThan(int len, {bool orEqual = false}) {
+    final myLen = this?.length ?? 0;
+    return orEqual ? myLen <= len : myLen < len;
   }
 }

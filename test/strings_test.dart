@@ -54,6 +54,21 @@ void main() {
       someString.hasLengthGreaterThan(0).should.beTrue();
     });
 
+    then('should have length less than 100', () {
+      someString.hasLengthShortThan(100).should.beTrue();
+    });
+
+    then('should have length less or equal than real length', () {
+      someString
+          .hasLengthShortThan(someString.length, orEqual: true)
+          .should
+          .beTrue();
+    });
+
+    then('should have length less than real length', () {
+      someString.hasLengthShortThan(someString.length).should.beFalse();
+    });
+
     then('should have length greater than his (length - 1)', () {
       someString.hasLengthGreaterThan(someString.length - 1).should.beTrue();
     });

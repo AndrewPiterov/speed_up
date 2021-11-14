@@ -66,4 +66,43 @@ void main() {
     const range = RangeValue(1.0, 10.99);
     range.toString().should.be('[1.0, 10.99]');
   });
+
+  test('equality', () {
+    const r1 = RangeValue(1, 2);
+    const r2 = RangeValue(1, 2);
+
+    r2.should.be(r1);
+  });
+
+  group('Num is inRange', () {
+    const range = RangeValue(5, 10);
+
+    test('should be true', () {
+      range.contains(7).should.beTrue();
+    });
+
+    test('should be false left edge', () {
+      range.contains(5).should.beFalse();
+    });
+
+    test('should be false', () {
+      range.contains(10).should.beFalse();
+    });
+  });
+
+  group('DateTime is inRange', () {
+    final range = RangeValue(DateTime(2021), DateTime(2021, 12, 31));
+
+    test('should be true', () {
+      range.contains(DateTime(2021, 3, 24)).should.beTrue();
+    });
+
+    test('should be false left edge', () {
+      range.contains(DateTime(2021)).should.beFalse();
+    });
+
+    test('should be false', () {
+      range.contains(DateTime(2021, 12, 31)).should.beFalse();
+    });
+  });
 }

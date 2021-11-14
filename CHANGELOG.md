@@ -1,3 +1,12 @@
+## 0.6.6
+
+* [Add] `orderBy` for `Iterable`
+* [Add] `title` property for `enum`
+* [Add] `hasLengthShortThan` function for `String`\
+\
+**Breaking change**
+* [Rename] `inRange` of `RangeValue` to `contains`
+
 ## 0.5.6
 
 * [Add] `String`'s extensions: `isNotNullOrEmpty`, `hasLength`, `hasLengthGreaterThan`

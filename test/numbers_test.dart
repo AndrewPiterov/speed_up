@@ -35,9 +35,9 @@ void main() {
 
   test('Genarte list', () {
     final odds = 100
-        .generate(
+        .generate<int>(
           (index) => index,
-          where: (item) => (item as int) > 10,
+          where: (item) => item > 10,
         )
         .skip(10)
         .take(10);

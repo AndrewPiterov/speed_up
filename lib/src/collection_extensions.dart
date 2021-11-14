@@ -26,6 +26,18 @@ extension CollectionExtension<T> on Iterable<T> {
     return res;
   }
 
+  Iterable<T> orderBy(num Function(T) order, {bool desc = false}) sync* {
+    final sorted = toList();
+    if (desc) {
+      sorted.sort((a, b) => order(b) > order(a) ? 1 : 0);
+    } else {
+      sorted.sort((a, b) => order(b) < order(a) ? 1 : 0);
+    }
+    for (final item in sorted) {
+      yield item;
+    }
+  }
+
   num sum(num Function(T item) callback) {
     var res = 0.0;
     for (final item in this) {

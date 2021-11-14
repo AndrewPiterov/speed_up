@@ -8,6 +8,8 @@ import 'package:shouldly/shouldly.dart';
 import 'package:speed_up/src/collection_extensions.dart';
 import 'package:test/test.dart';
 
+import 'models.dart';
+
 void main() {
   group('Number extensions:', () {
     test('sum of empty array should be 0', () {
@@ -155,21 +157,4 @@ void main() {
       });
     });
   });
-}
-
-class CoinOrder {
-  const CoinOrder(this.amount, this.coinPrice);
-
-  final double amount;
-  final double coinPrice;
-}
-
-class Person {
-  const Person(
-    this.name, {
-    this.age,
-  });
-
-  final String name;
-  final int? age;
 }

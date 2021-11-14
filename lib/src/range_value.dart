@@ -23,7 +23,7 @@ class RangeValue<T> {
     return true;
   }
 
-  bool inRange(T value) {
+  bool contains(T value) {
     if (start is DateTime) {
       return (start as DateTime).isBefore(value as DateTime) &&
           value.isBefore(end as DateTime);
