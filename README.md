@@ -10,44 +10,56 @@ Package to speed up your productivity.
 
 ## Usage
 
+### Object
+
+```dart
+someObj.isNull;
+someObj.isNotNull;
+```
+
 ### String extensions
+
+#### Check String is null or empty
+
+```dart
+'Some String'.isNullOrEmpty
+'Some String'.isNotNullOrEmpty
+```
+
+#### Capitalization
+
+```dart
+'flutter'.capitalized; // 'Flutter'
+
+'flutter is awesome'.titleCased; // 'Flutter Is Awesome'
+```
+
+#### Equality
+
+```dart
+str1.isEqualTo(str2);
+str1.isEqualTo(str2, ignoreCase: true);
+```
 
 ### Collection extension
 
-#### Sum
-
 ```dart
-final sum = [1,2,3,4,5,6].sum();
-print(sum); // Prints 21
+ final sum = [1, 2, 3].sum(); // 6
+
+ final sum = [Product(price: 100.99), Product(price: 49.99)].sum((p) => p.price);
 ```
 
 ```dart
-final sum = [Product(price: 100.99), Product(price: 49.99)].sum((p) => p.price);
-print(sum); // Prints 150.98
+final ordered = orders.orderBy((x) => x.amount, desc: true);
+```
+
+```dart
+final groups = people.groupBy((p) => p.age, map: (p) => p.name);
 ```
 
 #### Next After
 
 #### Random
-
-#### Check String is null or empty
-
-```dart
-isStringNullOrEmpty('Some String');
-isStringNullOrEmpty('');
-isStringNullOrEmpty(null);
-```
-
-#### Get enum title
-
-```dart
-enum AccountType {
-  general,
-  owner,
-}
-
-debugPrint('Account type: ' + getEnumTitle(UserType.general)); // prints Account type: general
-```
 
 #### Get image file size
 
@@ -86,9 +98,11 @@ print(dateTimeRange.isValid); // false
 We accept the following contributions:
 
 * Improving documentation
-* Reporting issues
+* [Reporting issues](https://github.com/AndrewPiterov/speed_up/issues/new)
 * Fixing bugs
 
 ## Maintainers
 
-* [Andrew Piterov](mailto:piterov1990@gmail.com?subject=[GitHub]%20Source%20Dart%20speed_up)
+* [Andrew Piterov](mailto:contact@andrewpiterov.com?subject=[GitHub]%20Source%20Dart%20speed_up)
+
+<a href="https://www.buymeacoffee.com/devcraft.ninja" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>

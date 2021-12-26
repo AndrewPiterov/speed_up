@@ -1,3 +1,8 @@
+## 0.6.7
+
+* [Add] `isNull`, `isNotNull` for `Object`
+* [Add] `placeSeparationBetweenItems` for `Iterable`
+
 ## 0.6.6
 
 * [Add] `orderBy` for `Iterable`

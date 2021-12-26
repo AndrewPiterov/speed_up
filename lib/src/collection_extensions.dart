@@ -13,7 +13,11 @@ extension DoubleExtension on Iterable<double> {
 }
 
 extension CollectionExtension<T> on Iterable<T> {
-  Map<K, Iterable<U>> groupBy<K, U>(K Function(T) key, U Function(T)? map) {
+  /// Group items by `Key`
+  Map<K, Iterable<U>> groupBy<K, U>(
+    K Function(T item) key, {
+    U Function(T item)? map,
+  }) {
     final res = <K, List<U>>{};
     for (final element in this) {
       final k = key(element);
@@ -26,12 +30,28 @@ extension CollectionExtension<T> on Iterable<T> {
     return res;
   }
 
-  Iterable<T> orderBy(num Function(T) order, {bool desc = false}) sync* {
+  /// Sort items
+  Iterable<T> orderBy(
+    num Function(T item) order, {
+    bool desc = false,
+  }) sync* {
     final sorted = toList();
     if (desc) {
-      sorted.sort((a, b) => order(b) > order(a) ? 1 : 0);
+      sorted.sort(
+        (a, b) => order(b) > order(a)
+            ? 1
+            : order(b) < order(a)
+                ? -1
+                : 0,
+      );
     } else {
-      sorted.sort((a, b) => order(b) < order(a) ? 1 : 0);
+      sorted.sort(
+        (a, b) => order(b) < order(a)
+            ? 1
+            : order(b) > order(a)
+                ? -1
+                : 0,
+      );
     }
     for (final item in sorted) {
       yield item;
@@ -45,6 +65,36 @@ extension CollectionExtension<T> on Iterable<T> {
     }
 
     return res;
+  }
+
+  /// The first element satisfying [test], or `null` if there are none.
+  T? firstOrNull({bool Function(T element)? test}) {
+    if (test == null) {
+      return isEmpty ? null : first;
+    }
+
+    T? result;
+    for (final element in this) {
+      if (test(element)) {
+        result = element;
+      }
+    }
+    return result;
+  }
+
+  /// The last element satisfying [test], or `null` if there are none.
+  T? lastOrNull({bool Function(T element)? test}) {
+    if (test == null) {
+      return isEmpty ? null : last;
+    }
+
+    T? result;
+    for (final element in this) {
+      if (test(element)) {
+        result = element;
+      }
+    }
+    return result;
   }
 
   T? get random {
@@ -88,5 +138,22 @@ extension CollectionExtension<T> on Iterable<T> {
         : list.indexWhere((element) => byKey(element) == current);
     final nextIndex = currentIndex >= list.length - 1 ? 0 : currentIndex + 1;
     return elementAt(nextIndex);
+  }
+
+  Iterable<T> placeSeparationBetweenItems(
+    T Function() separator,
+  ) sync* {
+    final count = length + (length <= 0 ? 0 : length - 1);
+
+    for (var i = 0; i < count; i++) {
+      if (i.isOdd) {
+        yield separator();
+        continue;
+      }
+
+      final itemIndex = (i / 2).floor();
+      final t = elementAt(itemIndex);
+      yield t;
+    }
   }
 }

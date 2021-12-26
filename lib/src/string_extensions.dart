@@ -6,7 +6,8 @@
 @Deprecated(
   'Use `isNullOrEmpty` getter of `String` instead. Will be removed in 1.0.0',
 )
-bool isStringNullOrEmpty(String? str) => str == null || str.isEmpty;
+bool isStringNullOrEmpty(String? str) =>
+    str == null || str.isEmpty || str.trim().isEmpty;
 
 extension StringIterableExtension on Iterable<String?> {
   String? get firstNonEmpty {

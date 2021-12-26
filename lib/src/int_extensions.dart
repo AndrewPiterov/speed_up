@@ -1,3 +1,5 @@
+import 'package:speed_up/speed_up.dart';
+
 extension IntExtensions on int {
   DateTime toDateFromMsUnixTimestamp({bool asLocal = false}) {
     final d = DateTime.fromMillisecondsSinceEpoch(this);
@@ -19,9 +21,9 @@ extension IntExtensions on int {
     return d.toUtc();
   }
 
-  Iterable<T> generate<T>(
-    T Function(int index) map, {
-    bool Function(T item)? where,
+  Iterable<K> generate<K>(
+    K Function(int index) map, {
+    bool Function(K item)? where,
   }) sync* {
     for (var i = 0; i < this; i++) {
       final t = map(i);

@@ -37,7 +37,7 @@ void main() {
           Person('Vera'),
         ];
 
-        final groups = people.groupBy((p) => p.age, (p) => p.name);
+        final groups = people.groupBy((p) => p.age, map: (p) => p.name);
 
         groups.should.as('group count').haveCount(3);
 
@@ -156,5 +156,11 @@ void main() {
         sum.should.be(7);
       });
     });
+  });
+
+  test('placeSeparationBetweenItems', () {
+    final coll = [1, 2, 3, 4, 5];
+    final res = coll.placeSeparationBetweenItems(() => 0);
+    res.should.be([1, 0, 2, 0, 3, 0, 4, 0, 5]);
   });
 }
