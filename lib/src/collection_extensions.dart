@@ -68,14 +68,14 @@ extension CollectionExtension<T> on Iterable<T> {
   }
 
   /// The first element satisfying [test], or `null` if there are none.
-  T? firstOrNull({bool Function(T element)? test}) {
-    if (test == null) {
+  T? firstOrNull([bool Function(T element)? predicate]) {
+    if (predicate == null) {
       return isEmpty ? null : first;
     }
 
     T? result;
     for (final element in this) {
-      if (test(element)) {
+      if (predicate(element)) {
         result = element;
       }
     }
@@ -83,14 +83,14 @@ extension CollectionExtension<T> on Iterable<T> {
   }
 
   /// The last element satisfying [test], or `null` if there are none.
-  T? lastOrNull({bool Function(T element)? test}) {
-    if (test == null) {
+  T? lastOrNull([bool Function(T element)? predicate]) {
+    if (predicate == null) {
       return isEmpty ? null : last;
     }
 
     T? result;
     for (final element in this) {
-      if (test(element)) {
+      if (predicate(element)) {
         result = element;
       }
     }
