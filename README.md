@@ -61,7 +61,16 @@ final groups = people.groupBy((p) => p.age, map: (p) => p.name);
 
 #### Random
 
-#### Get image file size
+#### Reorder list
+
+```dart
+const list = [1, 2, 3, 4, 5];
+
+list.reorderByIndexes(oldIndex: 1, newIndex: 0);  // [2, 1, 3, 4, 5]
+list.reorder(5, newIndex: 0).toList();          // [5, 1, 2, 3, 4]
+```
+
+### Get image file size
 
 ```dart
 

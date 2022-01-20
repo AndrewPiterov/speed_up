@@ -1,3 +1,8 @@
+## 0.6.8
+
+* [Add] `reorderByIndexes(oldIndex:, newIndex:)` for collections
+* [Add] `reorder(item:, newIndex:)` for collections
+
 ## 0.6.7
 
 * [Add] `isNull`, `isNotNull` for `Object`
@@ -51,9 +56,9 @@
 
 ## [0.1.1] - Refactoring
 
-* Add documentations
+* [Add] documentations
 
 ## [0.0.1] - Add release date
 
-* String extensions
-* Number extensions
+* [Add] String extensions
+* [Add] Number extensions

@@ -156,4 +156,21 @@ extension CollectionExtension<T> on Iterable<T> {
       yield t;
     }
   }
+
+  /// Reorder list by indexes
+  Iterable<T> reorderByIndexes({required int oldIndex, required int newIndex}) {
+    final newList = toList();
+    final item = newList.removeAt(oldIndex);
+
+    final index = newIndex;
+    newList.insert(index, item);
+
+    return newList;
+  }
+
+  /// Reorder list by place item by new index
+  Iterable<T> reorder(T item, {required int newIndex}) {
+    final oldIndex = toList().indexOf(item);
+    return reorderByIndexes(oldIndex: oldIndex, newIndex: newIndex);
+  }
 }
