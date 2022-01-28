@@ -2,7 +2,7 @@ import 'package:shouldly/shouldly.dart';
 import 'package:speed_up/src/collection_extensions.dart';
 import 'package:test/test.dart';
 
-import 'models.dart';
+import '../models.dart';
 
 void main() {
   const orders = [

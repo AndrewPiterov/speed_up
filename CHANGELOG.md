@@ -1,3 +1,7 @@
+## 0.6.9
+
+* [Add] `mapWithIndex(oldIndex:, newIndex:)` for collections
+
 ## 0.6.8
 
 * [Add] `reorderByIndexes(oldIndex:, newIndex:)` for collections

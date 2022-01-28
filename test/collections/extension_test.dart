@@ -8,7 +8,7 @@ import 'package:shouldly/shouldly.dart';
 import 'package:speed_up/src/collection_extensions.dart';
 import 'package:test/test.dart';
 
-import 'models.dart';
+import '../models.dart';
 
 void main() {
   group('Number extensions:', () {
@@ -97,10 +97,10 @@ void main() {
       });
 
       then('can contain duplicates', () {
-        final random = arr.takeRandom(arr.length - 3, mayHaveDuplicates: true);
+        final random =
+            arr.takeRandom(arr.length + 100, mayHaveDuplicates: true);
         final distinct = random.toSet().toList();
-
-        distinct.length.should.not.be(distinct);
+        random.length.should.not.be(distinct.length);
       });
     });
 
