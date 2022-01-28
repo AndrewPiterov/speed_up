@@ -57,6 +57,14 @@ final ordered = orders.orderBy((x) => x.amount, desc: true);
 final groups = people.groupBy((p) => p.age, map: (p) => p.name);
 ```
 
+#### mapWithIndex
+
+```dart
+const arr = [1, 2, 3];
+final arr2 = arr.mapWithIndex((index, item) => '$index - $item');
+print(arr2); // ['0 - 1', '1- 2', '2 -3']
+```
+
 #### Next After
 
 #### Random

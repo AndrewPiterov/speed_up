@@ -1,6 +1,6 @@
 name: speed_up
 description: Package to speed up your productivity.
-version: 0.6.9
+version: 0.6.9+1
 homepage: https://github.com/AndrewPiterov/speed_up
 
 environment:

@@ -1,6 +1,9 @@
+## 0.6.9+1
+
+* Improve documentation
 ## 0.6.9
 
-* [Add] `mapWithIndex(oldIndex:, newIndex:)` for collections
+* [Add] `mapWithIndex(func(index, item))` for collections
 
 ## 0.6.8
 
