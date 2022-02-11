@@ -1,3 +1,9 @@
+## 0.7.10
+
+* [Add] `firstOrNull([predicate:])`
+* [Add] `lastOrNull([predicate:])`
+* [Add] `replaceWhere((index:, item:):, with:)`
+
 ## 0.6.9+1
 
 * Improve documentation

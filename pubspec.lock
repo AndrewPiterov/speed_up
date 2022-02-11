@@ -112,7 +112,7 @@ packages:
       name: given_when_then_unit_test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.9"
+    version: "0.0.10"
   glob:
     dependency: transitive
     description:
@@ -259,7 +259,7 @@ packages:
       name: shouldly
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0+1"
+    version: "0.4.1+3"
   source_map_stack_trace:
     dependency: transitive
     description:

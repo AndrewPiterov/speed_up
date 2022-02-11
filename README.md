@@ -69,6 +69,21 @@ print(arr2); // ['0 - 1', '1- 2', '2 -3']
 
 #### Random
 
+#### replaceWhere
+
+```dart
+// Given array
+const arr = [1, 2, 3];
+
+// replace by index
+final newArray = arr.replaceWhere((index, _) => index == 1, withNewItem: 13);
+newArray.should.be([1, 13 ,3]);
+
+// or replace by prop
+final newArray = arr.replaceWhere((_, number) => number.isOdd, withNewItem: 13);
+newArray.should.be([ 13, 2, 13]);
+```
+
 #### Reorder list
 
 ```dart

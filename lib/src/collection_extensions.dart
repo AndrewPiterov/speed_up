@@ -73,13 +73,12 @@ extension CollectionExtension<T> on Iterable<T> {
       return isEmpty ? null : first;
     }
 
-    T? result;
     for (final element in this) {
       if (predicate(element)) {
-        result = element;
+        return element;
       }
     }
-    return result;
+    return null;
   }
 
   /// The last element satisfying [test], or `null` if there are none.
@@ -108,7 +107,7 @@ extension CollectionExtension<T> on Iterable<T> {
 
   Iterable<T> takeRandom(int count, {bool mayHaveDuplicates = false}) sync* {
     if (count <= 0) {
-      throw Error();
+      throw RangeError('`count` must not be negative.');
     }
 
     if (isEmpty) {
@@ -131,12 +130,32 @@ extension CollectionExtension<T> on Iterable<T> {
     }
   }
 
-  T takeAfter<K>(T current, {K Function(T)? byKey}) {
+  T? takeAfter(T current, {bool Function(T item)? where}) {
     final list = toList();
-    final currentIndex = byKey == null
-        ? list.indexOf(current)
-        : list.indexWhere((element) => byKey(element) == current);
-    final nextIndex = currentIndex >= list.length - 1 ? 0 : currentIndex + 1;
+
+    final currentIndex = list.indexOf(current);
+    if (currentIndex < 0) {
+      return null;
+    }
+
+    var nextIndex = currentIndex + 1;
+
+    if (where == null) {
+    } else {
+      final ni = list
+          .skip(currentIndex)
+          .toList()
+          .indexWhere((element) => where(element));
+      if (ni < 0) {
+        return null;
+      }
+      nextIndex = currentIndex + ni;
+    }
+
+    if (nextIndex >= list.length) {
+      return null;
+    }
+
     return elementAt(nextIndex);
   }
 
@@ -182,6 +201,20 @@ extension CollectionExtension<T> on Iterable<T> {
   Iterable<K> mapWithIndex<K>(K Function(int indes, T item) toElement) sync* {
     for (var i = 0; i < length; i++) {
       yield toElement(i, elementAt(i));
+    }
+  }
+
+  ///
+  Iterable<T> replaceWhere(
+    bool Function(int index, T item) predicate, {
+    required T withNewItem,
+  }) sync* {
+    for (var i = 0; i < length; i++) {
+      if (predicate(i, elementAt(i))) {
+        yield withNewItem;
+      } else {
+        yield elementAt(i);
+      }
     }
   }
 }
