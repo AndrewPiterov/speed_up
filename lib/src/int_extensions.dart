@@ -1,5 +1,3 @@
-import 'package:speed_up/speed_up.dart';
-
 extension IntExtensions on int {
   DateTime toDateFromMsUnixTimestamp({bool asLocal = false}) {
     final d = DateTime.fromMillisecondsSinceEpoch(this);

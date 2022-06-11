@@ -3,7 +3,7 @@ import 'package:speed_up/speed_up.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('Genarte list', () {
+  test('Generate list', () {
     final odds = 100
         .generate<int>(
           (index) => index,

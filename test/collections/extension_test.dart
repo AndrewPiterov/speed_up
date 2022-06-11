@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:given_when_then_unit_test/res/given.dart';
 import 'package:given_when_then_unit_test/res/test_fixtures.dart';
 import 'package:given_when_then_unit_test/res/then.dart';
@@ -22,7 +20,7 @@ void main() {
       sum.should.be(21);
     });
 
-    test('sum of ints and doubles', () {
+    test('sum of integers and doubles', () {
       final sum = [1.01, 2.2, 3.5].sum();
       sum.should.be(6.71);
     });
@@ -33,7 +31,7 @@ void main() {
       test('description', () {
         const people = [
           Person('Andrew', age: 18),
-          Person('Oleg', age: 20),
+          Person('Bob', age: 20),
           Person('Vera'),
         ];
 
@@ -45,7 +43,7 @@ void main() {
         groups[18].should.contain('Andrew');
 
         groups.should.containKey(20);
-        groups[20].should.contain('Oleg');
+        groups[20].should.contain('Bob');
 
         groups.should.containKey(null);
         groups[null].should.contain('Vera');
