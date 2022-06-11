@@ -1,3 +1,7 @@
+## 0.8.0+1
+
+* downgrade `meta` dependency
+
 ## 0.8.0
 
 * update dependencies

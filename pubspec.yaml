@@ -1,6 +1,6 @@
 name: speed_up
 description: Package to speed up your productivity.
-version: 0.8.0
+version: 0.8.0+1
 homepage: https://github.com/AndrewPiterov/speed_up
 
 environment:
@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   fluent_result: ^5.0.0
-  meta: ^1.8.0
+  meta: ^1.7.0
   quiver: ^3.1.0
 
 dev_dependencies:
