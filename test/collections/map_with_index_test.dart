@@ -7,7 +7,8 @@ void main() {
     const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     // lazy
-    final arr2 = arr.mapWithIndex((index, item) => '$index - $item');
+    final arr2 =
+        arr.mapWithIndex((index, item, isFirst, isLast) => '$index - $item');
 
     // create a list
     final items = arr2.toList();

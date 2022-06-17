@@ -1,3 +1,8 @@
+## 0.8.1
+
+* [Add] `splitOnPagesBy` count
+* [Add] `isFirst` and `isLast` for `mapWithIndex`
+
 ## 0.8.0+1
 
 * downgrade `meta` dependency

@@ -61,7 +61,8 @@ final groups = people.groupBy((p) => p.age, map: (p) => p.name);
 
 ```dart
 const arr = [1, 2, 3];
-final arr2 = arr.mapWithIndex((index, item) => '$index - $item');
+final arr2 =
+    arr.mapWithIndex((index, item, isFirst, isLast) => '$index - $item');
 print(arr2); // ['0 - 1', '1- 2', '2 -3']
 ```
 
@@ -91,6 +92,18 @@ const list = [1, 2, 3, 4, 5];
 
 list.reorderByIndexes(oldIndex: 1, newIndex: 0);  // [2, 1, 3, 4, 5]
 list.reorder(5, newIndex: 0).toList();          // [5, 1, 2, 3, 4]
+```
+
+#### split_on_pages_by_count
+
+```dart
+test('split_on_pages_by_count - full pages', () {
+  final pages = arr.splitOnPagesBy(2).toList();
+  pages.length.should.be(5);
+  for (final page in pages) {
+    page.length.should.be(2);
+  }
+});
 ```
 
 ### Get image file size
