@@ -1,4 +1,8 @@
-## 0.8.1
+## 0.8.3
+
+* [Add] `getListsDifference`
+
+## 0.8.2
 
 * [Add] `splitOnPagesBy` count
 * [Add] `isFirst` and `isLast` for `mapWithIndex`
