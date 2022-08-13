@@ -29,6 +29,8 @@ extension StringExtension on String {
       .split(' ')
       .map((str) => str.capitalized)
       .join(' ');
+
+  String get reversed => split('').reversed.join();
 }
 
 extension NullableStringExtension on String? {

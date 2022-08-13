@@ -1,3 +1,7 @@
+## 0.8.4
+
+* [Add] `reversed` String.
+
 ## 0.8.3
 
 * [Add] `getListsDifference`
