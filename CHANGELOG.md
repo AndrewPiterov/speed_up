@@ -1,3 +1,7 @@
+## 0.8.5
+
+* [Add] `asDefault`, `digitsOnly` String.
+
 ## 0.8.4
 
 * [Add] `reversed` String.

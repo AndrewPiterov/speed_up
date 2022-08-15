@@ -31,6 +31,10 @@ extension StringExtension on String {
       .join(' ');
 
   String get reversed => split('').reversed.join();
+
+  String digitsOnly() {
+    return replaceAll(RegExp('[^0-9]'), '');
+  }
 }
 
 extension NullableStringExtension on String? {
@@ -80,5 +84,9 @@ extension NullableStringExtension on String? {
   bool hasLengthShortThan(int len, {bool orEqual = false}) {
     final myLen = this?.length ?? 0;
     return orEqual ? myLen <= len : myLen < len;
+  }
+
+  String asDefault([String defaultValue = '']) {
+    return this == null || this == '' ? defaultValue : '';
   }
 }
