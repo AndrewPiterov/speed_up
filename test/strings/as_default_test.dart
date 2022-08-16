@@ -20,4 +20,10 @@ void main() {
     const String? name = null;
     name?.asDefault(defaultString).should.be(defaultString);
   });
+
+  test('non empty string', () {
+    const defaultString = 'no name';
+    const name = 'Andrew';
+    name.asDefault(defaultString).should.be('Andrew');
+  });
 }

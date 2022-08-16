@@ -87,6 +87,9 @@ extension NullableStringExtension on String? {
   }
 
   String asDefault([String defaultValue = '']) {
-    return this == null || this == '' ? defaultValue : '';
+    if (isNotNullOrEmpty) {
+      return this!;
+    }
+    return defaultValue;
   }
 }

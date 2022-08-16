@@ -1,3 +1,7 @@
+## 0.8.6
+
+* [Fix] `asDefault`
+
 ## 0.8.5
 
 * [Add] `asDefault`, `digitsOnly` String.
