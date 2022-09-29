@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 @Deprecated('Use `title` getter of Enum instead. Will be removed in 1.0.0')
 String getEnumTitle(dynamic someEnum) => someEnum.toString().split('.').last;
 
@@ -22,4 +24,13 @@ class ListsDifferences<T> {
   final List<T> newItems;
   final List<T> sameItems;
   final List<T> deletedItems;
+}
+
+/// Log the duration of the [func] execution.
+Future benchLog(String label, Function() action) async {
+  final start = DateTime.now();
+  await action();
+  final end = DateTime.now();
+  final duration = end.difference(start);
+  log('$label: $duration');
 }

@@ -1,3 +1,7 @@
+## 0.8.7
+
+* [Add] `benchLog(label, fn)` to log the time it takes to run a function.
+
 ## 0.8.6
 
 * [Fix] `asDefault`
