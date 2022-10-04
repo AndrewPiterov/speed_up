@@ -1,3 +1,7 @@
+## 0.8.8
+
+* [Add] from `Tuple<T1, T2>` up to `Tuple<T1, T2, T3, T4, T5>`.
+
 ## 0.8.7
 
 * [Add] `benchLog(label, fn)` to log the time it takes to run a function.
