@@ -1,3 +1,7 @@
+## 0.8.9
+
+* [Add] `Debounce` class
+
 ## 0.8.8
 
 * [Add] from `Tuple<T1, T2>` up to `Tuple<T1, T2, T3, T4, T5>`.

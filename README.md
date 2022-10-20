@@ -138,6 +138,22 @@ final dateTimeRange = RangeValue(end, start);
 print(dateTimeRange.isValid); // false
 ```
 
+## Debouncer
+
+### Declare it
+
+```dart
+final debounce = Debounce(delay: const Duration(milliseconds: 100));
+```
+
+### and trigger it
+
+```dart
+onTextChange(String text) {
+  _debounce(() => print(text));
+}
+```
+
 ## Contributing
 
 We accept the following contributions:
