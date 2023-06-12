@@ -31,7 +31,7 @@ void main() {
   given('epoch', () {
     const epoch = 1636865303;
 
-    then('toDateFromSecUnixTimestamp in UTC should retrun Date', () {
+    then('toDateFromSecUnixTimestamp in UTC should return Date', () {
       final date = epoch.toDateFromSecUnixTimestamp();
 
       date.year.should.be(2021);
@@ -42,7 +42,7 @@ void main() {
       date.second.should.be(23);
     });
 
-    then('toDateFromSecUnixTimestamp in Local should retrun Date', () {
+    then('toDateFromSecUnixTimestamp in Local should return Date', () {
       final date = epoch.toDateFromSecUnixTimestamp(asLocal: true);
 
       final utc = epoch.toDateFromSecUnixTimestamp();

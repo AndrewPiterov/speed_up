@@ -1,3 +1,4 @@
+/// speed_up library
 library speed_up;
 
 export 'src/collection_extensions.dart';
