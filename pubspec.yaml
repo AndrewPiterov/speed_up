@@ -1,10 +1,10 @@
 name: speed_up
 description: Package to speed up your productivity.
-version: 0.8.10
+version: 0.9.0
 homepage: https://github.com/AndrewPiterov/speed_up
 
 environment:
-  sdk: '>=2.12.0 <4.0.0'
+  sdk: '>=2.14.0 <4.0.0'
 
 dependencies:
   equatable: ^2.0.5
