@@ -1,3 +1,7 @@
+## 0.8.10
+
+* [Add] intersperse
+
 ## 0.8.9
 
 * [Add] `Debounce` class

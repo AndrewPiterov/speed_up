@@ -204,8 +204,7 @@ extension CollectionExtension<T> on Iterable<T> {
       T item,
       bool isFirst,
       bool isLast,
-    )
-        toElement,
+    ) toElement,
   ) sync* {
     for (var i = 0; i < length; i++) {
       yield toElement(

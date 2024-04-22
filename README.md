@@ -106,6 +106,18 @@ test('split_on_pages_by_count - full pages', () {
 });
 ```
 
+### intersperse
+
+Puts [element] between every element in list.
+
+Example:
+
+```dart
+final list1 = intersperse(2, <int>[]); // [];
+final list2 = intersperse(2, [0]); // [0];
+final list3 = intersperse(2, [0, 0]); // [0, 2, 0];
+```
+
 ### Get image file size
 
 ```dart
